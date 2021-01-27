@@ -10,10 +10,6 @@ const app = express();
 app.set('view engine', ejs);
 app.use(express.static('public'));  // for css
 
-app.listen(process.env.PORT || port, function(){
-    console.log("Server has started.");
-});
-
 app.get('/', (req, res) => {
     const randomRecipe =  "https://api.spoonacular.com/recipes/random" + process.env.API_KEY;
     let title, image, summary, instructions;
@@ -42,10 +38,6 @@ app.get('/', (req, res) => {
 });
 
 
-
-
-/*The name of the recipe
-Main ingredients (including amount and metric units)
-Summary
-Instructions
-Image*/
+app.listen(process.env.PORT || port, function(){
+    console.log("Server has started.");
+});
