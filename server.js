@@ -37,10 +37,10 @@ app.get('/', (req, res) => {
     });
 });
 
-// app will run on this port
-app.listen(port, () => {
-    console.log(`app running on port ${port}\n`);
+app.listen(process.env.PORT || port, function(){
+    console.log("Server has started.");
 });
+
 
 /*The name of the recipe
 Main ingredients (including amount and metric units)
