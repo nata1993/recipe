@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const ejs = require('ejs');
 const ax = require('axios');
@@ -10,7 +11,7 @@ app.set('view engine', ejs);
 app.use(express.static('public'));  // for css
 
 app.get('/', (req, res) => {
-    const randomRecipe =  "https://api.spoonacular.com/recipes/random?apiKey=75f02c3e61ba49ab94b9d4cc2e0cc2d5";
+    const randomRecipe =  "https://api.spoonacular.com/recipes/random" + process.env.API_KEY;
     let title, image, summary, instructions;
 
     ax.get(randomRecipe)
