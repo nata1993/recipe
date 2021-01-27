@@ -12,6 +12,12 @@
         <img src="<%= data.image %>"><br><hr>
         <%- data.summary %>
         <hr>
+        <h3>Ingrediencs</h3>
+        <% for(var i = 0; i < ingredients.length; i++) { %>
+            <li><%= ingredients[i].name %> - <%= ingredients[i].ammount %></li>
+        <% } %>
+        <br>
+        <hr>
         <%- data.instructions %>
     </main>
     
